@@ -16,7 +16,7 @@
 	$showForm = false;
 	
 	// Connect to the database
-	$dbConnect = mysqli_connect("localhost", "root", "!root", $dbName);
+	$dbConnect = mysqli_connect("localhost", "root", "", $dbName);
 	if($dbConnect === false) // If it can't connect
 		echo "<p>Connect error: " . mysqli_error() . "</p>\n";
 	else
@@ -32,17 +32,11 @@
 			
 			include_once("addFunctions.php");
 			// Build query for artist Table
-			$addArtist = $dbConnect->query("SELECT * FROM artist WHERE ArtistName = '$artistName'");
+			$addArtist = @mysqli_query($dbConnect, "SELECT * FROM artist WHERE ArtistName = '$artistName'");
 			
 			// Add the new artist
 			AddArtist($addArtist, $dbConnect, $artistName);
 			
-			// Display the new artist
-			displayNewArtist($dbConnect, $artistName);
-			
-			// Close the database
-			mysqli_close($dbConnect);
-
 		}
 		else
 			$showForm = true;
@@ -68,11 +62,6 @@
 			// Add the new artist
 			AddSong($addSong, $dbConnect, $artistID,$songLength, $songTitle, $songYear);
 			
-			// Display the new artist
-			displayNewSong($dbConnect, $artistID, $songTitle);
-			
-			// Close the database
-			mysqli_close($dbConnect);
 		}
 		else
 			$showForm = true;	
@@ -93,13 +82,6 @@
 
 			// Add the New Album
 			AddAlbum($addAlbum, $dbConnect, $albumTitle, $artistID);
-
-			// Display the new Album
-			displayNewAlbum($dbConnect, $albumTitle, $artistID);
-
-			// Close the database
-			mysqli_close($dbConnect);
-			
 
 		}
 		else
@@ -139,7 +121,17 @@
 					</p>
 					<p>
 						<LABEL>Artist ID (Which artist?)</Label>
-						<INPUT type="text" name="ArtistID">
+						<?php
+						$result = @mysqli_query($dbConnect, "select ArtistID, ArtistName from artist");
+						echo "<select name='ArtistID'>";
+			
+						while ($row = $result->fetch_assoc()) {              			 
+								echo '<option value="'.$row['ArtistID'].'">'.$row['ArtistName'].'</option>';
+						}
+			
+						echo "</select>";
+
+						?>
 					</p>
 					<input type="submit" name="SubmitSong">
 					<input type="reset"><br>
@@ -156,8 +148,18 @@
 						<INPUT type="text" name="AlbumTitle">
 					</p>
 					<p>
-						<LABEL>ArtistID (Which artist?)</Label>
-						<INPUT type="text" name="ArtistID">
+					<LABEL>Artist ID (Which artist?)</Label>
+						<?php
+						$result = @mysqli_query($dbConnect, "select ArtistID, ArtistName from artist");
+						echo "<select name='ArtistID'>";
+			
+						while ($row = $result->fetch_assoc()) {              			 
+								echo '<option value="'.$row['ArtistID'].'">'.$row['ArtistName'].'</option>';
+						}
+			
+						echo "</select>";
+
+					?>
 					</p>
 					<input type="submit" name="SubmitAlbum">
 					<input type="reset">

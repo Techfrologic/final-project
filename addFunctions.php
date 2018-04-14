@@ -21,7 +21,6 @@
 		}
 	}
 	
-	
 	if(!function_exists('AddArtist'))
 	{
 		// Adds new artist
