@@ -16,7 +16,7 @@
 	$showForm = false;
 	
 	// Connect to the database
-	$dbConnect = mysqli_connect("localhost", "root", "", $dbName);
+	$dbConnect = mysqli_connect("localhost", "root", "!root", $dbName);
 	if($dbConnect === false) // If it can't connect
 		echo "<p>Connect error: " . mysqli_error() . "</p>\n";
 	else
