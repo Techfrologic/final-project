@@ -2,12 +2,6 @@
 	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!--
-      Author: Doug Enos	
-      Date:   Apr 7, 2018
-
-      Filename: UserLogin.php
-   -->
 <title>College Internships</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8849-1" />
 </head>

@@ -1,6 +1,6 @@
 <?php
 $Body = "";
-// #3
+
 $errors = 0;
 $email = "";
 if (empty($_POST['email'])) {
@@ -18,7 +18,7 @@ else {
 	$email = "";
      }
 }
-// #4
+
 if (empty($_POST['password'])) {
 	++$errors;
 	$Body .= "<p>You need to enter a password.</p>\n";
@@ -47,7 +47,7 @@ if ((!(empty($password))) && (!(empty($password2)))) {
 		$password2 = "";
 	}
 }
-// #5
+
 if ($errors == 0) {
 	$DBConnect = @mysqli_connect("localhost", "root", "!root");
 	if ($DBConnect === FALSE) {
@@ -66,7 +66,7 @@ if ($errors == 0) {
 		}
 	}
 }
-// #6
+
 $TableName = "customer";
 if ($errors == 0) {
 	$SQLstring = "SELECT count(*) FROM $TableName" . " WHERE email='" . $email. "'";
@@ -81,12 +81,12 @@ if ($errors == 0) {
 		}
 	}
 }
-// #7
+
 if ($errors > 0) {
 	$Body .= "<p>Please use your browser's BACK button to return" . 
 		" to the form and fix the errors indicated.</p>\n";
 }
-// #8
+
 if ($errors == 0) {
 	$first = stripslashes($_POST['first']);
 	$last = stripslashes($_POST['last']);
@@ -108,7 +108,6 @@ if ($errors == 0) {
 	setcookie("customerID", $customerID);
 	mysqli_close($DBConnect);
 }
-// #9
 if ($errors == 0) {
 	$CustomerName = $first . " " . $last;
 	$Body .= "<p>Thank you, $CustomerName. ";
@@ -130,18 +129,9 @@ if ($errors == 0) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<!--
-    
-      Author: Doug Enos	
-      Date:   April 14, 2018
-
-      Filename:RegisterUser.php
-   -->
-<!-- #1 -->
 	<title>User Registration</title>
 </head>
 <body>
-<!-- #2. -->
 <h1>Songs</h1>
 <h2>User Registration</h2>
 <?php
