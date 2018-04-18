@@ -96,7 +96,7 @@ if ($errors == 0) {
 	$zipcode = stripslashes($_POST['zipcode']);
 	$wallet = 0.00;
 	
-	$SQLstring = "INSERT INTO $TableName " .
+	$SQLstring = "INSERT IGNORE INTO $TableName " .
 		"(CustomerID, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
 		    Wallet, Password) " .
 		" VALUES (NULL, '$first', '$last', '$address', '$city'," .
