@@ -98,11 +98,11 @@ if ($errors == 0) {
 	
 	$SQLstring = "INSERT INTO $TableName " .
 		"(CustomerID, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
-		    Wallet. Password) " .
+		    Wallet, Password) " .
 		" VALUES (NULL, '$first', '$last', '$address', '$city'," .
 		" '$state', '$zipcode', '$email', $wallet," .
 		" '" . md5($password) . "')";
-		echo "<p>$SQLstring</p>";
+		
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
 	if ($QueryResult !== false) {
 		$Body .= "<p>Unable to save your registration " .
