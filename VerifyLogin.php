@@ -10,7 +10,7 @@
 <h2>Verify User Login</h2>
 <?php
 $errors = 0;
-$DBConnect = @mysqli_connect("localhost", "root", "!root");
+$DBConnect = @mysqli_connect("localhost", "root", "crumplebatverifytree");
 if ($DBConnect === FALSE) {
     echo "<p>Unable to connect to the database server. " .
          "Error code " . mysqli_errno() . ": " .
