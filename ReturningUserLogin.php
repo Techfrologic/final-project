@@ -8,12 +8,14 @@
 <style>
     label {
         display: inline-block;
-        width: 200px;
+        width: 180px;
     }
 </style>
 <body>
-<h3>Returning User Login</h3>
+
 <form method="post" action="VerifyLogin.php">
+<fieldset style= width:50%>
+<legend>Returning User Login</legend>
 <p>
 <label>Enter your e-mail address:</label>
 <input type="text" name="email" />
@@ -26,7 +28,8 @@ must be at least 6 characters long)</em></p>
 <input type="reset" name="reset"
 value="Reset Login Form" />
 <input type="submit" name="login" value="Log In" />
+</fieldset>
 </form>
-<hr />
+
 </body>
 </html>

@@ -7,18 +7,19 @@
 <style>
 	label {
 		display: inline-block;
-		width: 200px;
+		width: 180px;
 	}
 </style>
 </head>
 <body>
-<h1>New User</h1>
-<h2>Register / Log In</h2>
+
 <p>New users, please complete the form to
 register as a user.</p>
-<hr />
+
 <h3>New User  Registration</h3>
 <form method="post" action="RegisterUser.php">
+<fieldset style= width:50%>
+<legend>Create New Account</legend>
 <p>
 <label>Enter your first name</label>
 <input type="text" name="first" />
@@ -116,7 +117,8 @@ must be at least 6 characters long)</em></p>
 value="Reset Registration Form" />
 <input type="submit" name="register"
 value="Register" />
+</fieldset>
 </form>
-<hr />
+
 </body>
 </html>
