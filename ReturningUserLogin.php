@@ -5,6 +5,12 @@
 <title>Verify Returning User</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8849-1" />
 </head>
+<style>
+    label {
+        display: inline-block;
+        width: 200px;
+    }
+</style>
 <body>
 <h3>Returning User Login</h3>
 <form method="post" action="VerifyLogin.php">
