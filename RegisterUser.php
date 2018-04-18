@@ -90,7 +90,7 @@ if ($errors > 0) {
 if ($errors == 0) {
 	$first = stripslashes($_POST['first']);
 	$last = stripslashes($_POST['last']);
-	$email = stripslashes($_POST['email']);
+	//$email = stripslashes($_POST['email']);
 	$address = stripslashes($_POST['address']);
 	$city = stripslashes($_POST['city']);
 	$state = stripslashes($_POST['state']);
