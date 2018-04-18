@@ -102,7 +102,6 @@ if ($errors == 0) {
 		" VALUES (NULL, '$first', '$last', '$address', '$city'," .
 		" '$state', '$zipcode', '$email', $wallet," .
 		" '" . md5($password) . "')";
-		
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
 	if ($QueryResult !== false) {
 		$Body .= "<p>Unable to save your registration " .
