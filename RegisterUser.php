@@ -97,7 +97,7 @@ if ($errors == 0) {
 	$wallet = 0.00;
 	
 	$SQLstring = "INSERT INTO $TableName " .
-		"(NULL, Firstname, Lastname, StreetAddress, City, State, Zipcode,
+		"(NULL, FirstName, LastName, StreetAddress, City, State, Zipcode,
 		   Email, Wallet. Password) " .
 		" VALUES ( '$first', '$last', '$address', '$city'," .
 		" '$state', '$zipcode', '$email', $wallet," .
@@ -120,7 +120,7 @@ if ($errors == 0) {
 	$CustomerName = $first . " " . $last;
 	$Body .= "<p>Thank you, $CustomerName. ";
 	$Body .= "Your new Customer ID is <strong>" .
-		$CustomerID . "</strong>.</p>\n";
+		$customerID . "</strong>.</p>\n";
 }
 if ($errors == 0) {
 	$Body .= "<form method='post' " .
