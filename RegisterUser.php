@@ -101,7 +101,7 @@ if ($errors == 0) {
 		"(CustomerID, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
 		    Wallet, Password) " .
 		" VALUES (NULL, '$first', '$last', '$email', '$address', '$city'," .
-		" '$state', '$zipcode', :$wallet," .
+		" '$state', '$zipcode', $wallet," .
 		" '" . md5($password) . "')";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
 	if ($QueryResult !== false) {
