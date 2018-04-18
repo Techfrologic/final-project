@@ -49,7 +49,7 @@ if ((!(empty($password))) && (!(empty($password2)))) {
 }
 
 if ($errors == 0) {
-	$DBConnect = @mysqli_connect("localhost", "root", "!root");
+	$DBConnect = @mysqli_connect("localhost", "root", "crumplebatverifytree");
 	if ($DBConnect === FALSE) {
 		$Body .= "<p>Unable to connect to the database server" . 
 		"Error code " . mysqli_errno() . ": " . mysqli_error() . "</p>\n";
@@ -67,7 +67,7 @@ if ($errors == 0) {
 	}
 }
 
-$TableName = "customer";
+$TableName = "Customer";
 if ($errors == 0) {
 	$SQLstring = "SELECT count(*) FROM $TableName" . " WHERE email='" . $email. "'";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
@@ -90,9 +90,17 @@ if ($errors > 0) {
 if ($errors == 0) {
 	$first = stripslashes($_POST['first']);
 	$last = stripslashes($_POST['last']);
+	$address = stripslashes($_POST['address']);
+	$city = stripslashes($_POST['city']);
+	$state = stripslashes($_POST['state']);
+	$zipcode = stripslashes($_POST['zipcode']);
+	$wallet = 0.00;
+	
 	$SQLstring = "INSERT INTO $TableName " .
-		"(first, last, email, password) " .
-		" VALUES ( '$first', '$last', '$email', " .
+		"(NULL, Firstname, Lastname, StreetAddress, City, State, Zipcode,
+		   Email, Wallet. Password) " .
+		" VALUES ( '$first', '$last', '$address', '$city'," .
+		" '$state', '$zipcode', '$email', $wallet," .
 		" '" . md5($password) . "')";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
 	if ($QueryResult !== FALSE) {
