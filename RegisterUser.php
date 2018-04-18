@@ -118,9 +118,7 @@ if ($errors == 0) {
 }
 if ($errors == 0) {
 	$CustomerName = $first . " " . $last;
-	$Body .= "<p>Thank you, $CustomerName. ";
-	$Body .= "Your new Customer ID is <strong>" .
-		$customerID . "</strong>.</p>\n";
+	$Body .= "<p>Thank you for registering, $CustomerName.</p>\n";
 }
 if ($errors == 0) {
 	$Body .= "<form method='post' " .
