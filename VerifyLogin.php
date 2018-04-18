@@ -32,10 +32,10 @@ $TableName = "Customer";
 $userEmail = stripslashes($_POST['email']);
 $userPasswd = md5(stripslashes($_POST['password']));
 if ($errors == 0) {
-    $SQLstring = "SELECT customerID, first, last FROM $TableName 
-	 WHERE email='$userEmail' AND password='$userPasswd'";
+    $SQLstring = "SELECT CustomerID, FirstName, LastName FROM $TableName 
+	 WHERE Email='$userEmail' AND Password='$userPasswd'";
     $QueryResult = @mysqli_query($DBConnect, $SQLstring);
-    if (mysqli_num_rows($QueryResult)==0) {
+    if (mysqli_num_rows($QueryResult) == 0) {
         echo "<p>The e-mail address/password " .
             " combination entered is not valid.
             </p>\n";
