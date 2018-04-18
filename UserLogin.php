@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-<h1>College Internships</h1>
+<h1>New User</h1>
 <h2>Register / Log In</h2>
 <p>New users, please complete the form to
 register as a user.</p>
