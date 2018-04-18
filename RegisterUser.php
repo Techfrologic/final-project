@@ -97,8 +97,8 @@ if ($errors == 0) {
 	$wallet = 0.00;
 	
 	$SQLstring = "INSERT INTO $TableName " .
-		"(NULL, FirstName, LastName, StreetAddress, City, State, Zipcode,
-		   Email, Wallet. Password) " .
+		"(NULL, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
+		    Wallet. Password) " .
 		" VALUES ( '$first', '$last', '$address', '$city'," .
 		" '$state', '$zipcode', '$email', $wallet," .
 		" '" . md5($password) . "')";
