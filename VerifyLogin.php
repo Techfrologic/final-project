@@ -5,6 +5,12 @@
 <title>Verify User Login</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8849-1" />
 </head>
+<style>
+    label {
+        display: inline-block;
+        width: 200px;
+    }
+</style>
 <body>
 <h1>Songs</h1>
 <h2>Verify User Login</h2>
