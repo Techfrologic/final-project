@@ -50,7 +50,7 @@ if ((!(empty($password))) && (!(empty($password2)))) {
 
 if ($errors == 0) {
 	$DBConnect = @mysqli_connect("localhost", "root", "crumplebatverifytree");
-	if ($DBConnect === FALSE) {
+	if ($DBConnect === false) {
 		$Body .= "<p>Unable to connect to the database server" . 
 		"Error code " . mysqli_errno() . ": " . mysqli_error() . "</p>\n";
 		++$errors;
@@ -58,7 +58,7 @@ if ($errors == 0) {
 	else {
 		$DBName = "Songs";
 		$result = @mysqli_select_db($DBConnect, $DBName);
-		if ($result === FALSE) {
+		if ($result === false) {
 			$Body .= "<p>Unable to select the database. " . 
 		       	"Error code " . msqli_errno($DBConnect) .
 			": " . mysqli_error($DBConnect) . "</p>\n";
@@ -71,7 +71,7 @@ $TableName = "Customer";
 if ($errors == 0) {
 	$SQLstring = "SELECT count(*) FROM $TableName" . " WHERE email='" . $email. "'";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
-	if ($QueryResult !== FALSE) {
+	if ($QueryResult !== false) {
 		$Row = mysqli_fetch_row($QueryResult);
 		if ($Row[0]>0) {
 			$Body .= "<p>The email address entered (" .
@@ -114,7 +114,7 @@ if ($errors == 0) {
 		$customerID = mysqli_insert_id($DBConnect);
 	}
 	setcookie("customerID", $customerID);
-	mysqli_close($DBConnect);
+	//mysqli_close($DBConnect);
 }
 if ($errors == 0) {
 	$CustomerName = $first . " " . $last;
