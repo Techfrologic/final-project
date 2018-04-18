@@ -97,9 +97,9 @@ if ($errors == 0) {
 	$wallet = 0.00;
 	
 	$SQLstring = "INSERT INTO $TableName " .
-		"(NULL, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
+		"(CustomerID, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
 		    Wallet. Password) " .
-		" VALUES ( '$first', '$last', '$address', '$city'," .
+		" VALUES (NULL, '$first', '$last', '$address', '$city'," .
 		" '$state', '$zipcode', '$email', $wallet," .
 		" '" . md5($password) . "')";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
