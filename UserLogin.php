@@ -39,7 +39,7 @@ Enter your City:
 </p>
 <p>
 <label>Enter your state: </label>
-<select>
+<select name="state">
 	<option value="">Select a State</option>
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
