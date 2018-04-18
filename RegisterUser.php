@@ -96,11 +96,11 @@ if ($errors == 0) {
 	$zipcode = stripslashes($_POST['zipcode']);
 	$wallet = 0.00;
 	
-	$SQLstring = "INSERT IGNORE INTO $TableName " .
+	$SQLstring = "INSERT INTO $TableName " .
 		"(CustomerID, FirstName, LastName, Email, StreetAddress, City, State, Zipcode,
 		    Wallet, Password) " .
-		" VALUES (NULL, '$first', '$last', '$address', '$city'," .
-		" '$state', '$zipcode', '$email', $wallet," .
+		" VALUES (NULL, '$first', '$last', '$email', '$address', '$city'," .
+		" '$state', '$zipcode', :$wallet," .
 		" '" . md5($password) . "')";
 	$QueryResult = @mysqli_query($DBConnect, $SQLstring);
 	if ($QueryResult !== false) {
