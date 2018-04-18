@@ -7,7 +7,7 @@
 <style>
 	label {
 		display: inline-block;
-
+		width: 200px;
 	}
 </style>
 </head>
@@ -19,12 +19,12 @@ register as a user.</p>
 <hr />
 <h3>New User  Registration</h3>
 <form method="post" action="RegisterUser.php">
-<p>Enter your name:
-<label> First</label>
+<p>
+<label>Enter your first name</label>
 <input type="text" name="first" />
 </p>
 <p>
-<label>Last:</label>
+<label>Enter your last name:</label>
 <input type="text" name="last" />
 </p>
 <p>
