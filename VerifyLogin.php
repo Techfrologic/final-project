@@ -43,10 +43,10 @@ if ($errors == 0) {
     }
     else {
         $Row = mysqli_fetch_assoc($QueryResult);
-        $CustomerID = $Row['customerID'];
-        $CustomerName = $Row['first'] . " " .
+        $CustomerID = $Row['CustomerID'];
+        $CustomerName = $Row['FirstName'] . " " .
         $Row['last'];
-        echo "<p>Welcome back, $CustomernName!</p>\n";
+        echo "<p>Welcome back, $CustomerName!</p>\n";
     }
 }
 if ($errors > 0) {
