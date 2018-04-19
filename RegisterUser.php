@@ -128,7 +128,7 @@ if ($errors == 0) {
 	$Body .= "<form method='post' " .
 	" action='AvailableSongs.php'>\n";
 	$Body .= "<input type='hidden' name='customerID' " .
-	" value='$InternID'>\n";
+	" value='$customerID'>\n";
 	$Body .= "<input type='submit' name='submit' " .
 	" value='View Available Songs'>\n";
 	$Body .= "</form>\n";
