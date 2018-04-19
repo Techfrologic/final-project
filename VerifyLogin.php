@@ -44,7 +44,7 @@ if ($errors == 0) {
     }
     else {
         $Row = mysqli_fetch_assoc($QueryResult);
-        $CustomerID = $Row['CustomerID'];
+        $customerID = $Row['CustomerID'];
         $CustomerName = $Row['FirstName'] . " " .
         $Row['LastName'];
         echo "<p>Welcome back, $CustomerName!</p>\n";
